@@ -5,5 +5,5 @@ import org.abstractica.javacsg.Geometry3D;
 
 public interface Shapes {
     Geometry getGeometry();
-    Geometry setGeometry(Geometry geometry);
+    void setGeometry(Geometry geometry);
 }
