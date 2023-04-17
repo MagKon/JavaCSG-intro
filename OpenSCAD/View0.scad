@@ -1,41 +1,8 @@
-union()
+linear_extrude(height = 20.0, twist = 0.0, scale = 1.0, slices = 1, center = true)
 {
-    difference()
+    scale([10.0, 10.0])
     {
-        linear_extrude(height = 1.0, twist = 0.0, scale = 1.0, slices = 1, center = true)
-        {
-            scale([90.0, 90.0])
-            {
-                M95();
-            }
-        }
-        linear_extrude(height = 20.0, twist = 0.0, scale = 1.0, slices = 1, center = true)
-        {
-            scale([10.0, 10.0])
-            {
-                M51();
-            }
-        }
-    }
-    translate([0.0, 0.0, 10.0])
-    {
-        intersection()
-        {
-            linear_extrude(height = 1.0, twist = 0.0, scale = 1.0, slices = 1, center = true)
-            {
-                scale([90.0, 90.0])
-                {
-                    M95();
-                }
-            }
-            linear_extrude(height = 20.0, twist = 0.0, scale = 1.0, slices = 1, center = true)
-            {
-                scale([10.0, 10.0])
-                {
-                    M51();
-                }
-            }
-        }
+        M51();
     }
 }
 
@@ -81,24 +48,6 @@ module M51()
         paths =
         [
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
-        ]
-    );
-}
-
-module M95()
-{
-    polygon
-    (
-        points =
-        [
-            [-0.5, -0.5], 
-            [0.5, -0.5], 
-            [0.5, 0.5], 
-            [-0.5, 0.5]
-        ],
-        paths =
-        [
-            [0, 1, 2, 3]
         ]
     );
 }
